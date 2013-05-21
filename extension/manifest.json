@@ -1,0 +1,13 @@
+{
+  "name": "Simple OSP",
+  "description": "Password manager using the magic of cryptographic hashing!",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["jquery-1.9.1.js", "myscript.js"]
+    }
+  ],
+
+  "manifest_version": 2
+}

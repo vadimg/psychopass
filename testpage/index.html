@@ -1,0 +1,11 @@
+<form action="forms.zagraf.com">
+    <input type="password" name="pw" id="pw"/>
+    <input type="submit"/>
+</form>
+<input type="text" id="pwclear"/>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+    $("#pw").change(function() {
+        $("#pwclear").val($("#pw").val());
+    });
+</script>
