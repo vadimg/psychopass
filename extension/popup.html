@@ -1,9 +1,9 @@
 hello mom
-<script>
-$("input[type=password]").each(function() {
-    var $passBox = $(this);
-    var $form = $passBox.parents('form');
-    var action = $form.attr('action');
-    $passBox.val(action);
-});
-</script>
+<form id="passForm">
+    Master password:
+    <input type="text" id="domain"/>
+    <input type="text" id="master-pass"/>
+    <input type="submit">
+</form>
+<script src="jquery-1.9.1.js"></script>
+<script src="popup.js"></script>
