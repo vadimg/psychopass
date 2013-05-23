@@ -40,6 +40,8 @@ function extractActionDomain(action) {
 function extractDomain(host) {
     var s;  // the final result
 
+    host = host.split(':')[0]; // strip out port
+
     // Begin Chris Zarate's code
     host=host.split('.');
 

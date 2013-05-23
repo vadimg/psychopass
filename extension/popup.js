@@ -2,8 +2,12 @@ var tabid;
 
 chrome.tabs.getSelected(null, function(tab) {
     chrome.tabs.sendMessage(tab.id, {mtype: 'getFormInfo'}, function(response) {
-        tabid = tab.id;
         console.log('got response', response);
+        if(!response) {
+            return;
+        }
+
+        tabid = tab.id;
 
         var domain = response.domain;
         console.log('setting domain', domain);
@@ -30,7 +34,6 @@ function generatePassword(cb) {
     };
 
     var engine = new Engine(opts);
-    console.log(engine);
     engine.run();
 }
 
@@ -39,7 +42,6 @@ function submit(evt) {
 
     generatePassword(function(password) {
         chrome.tabs.sendMessage(tabid, {mtype: 'insertPasswords', password: password}, function() {
-            console.log('received reply');
             window.close();
         });
     });
@@ -66,3 +68,12 @@ $email.change(function() {
 });
 
 $('#passForm').submit(submit);
+
+var $domain = $('#domain');
+$('#domain-container').click(function() {
+    $domain.prop('disabled', false);
+    $domain.focus();
+});
+$domain.blur(function() {
+    $domain.prop('disabled', true);
+});

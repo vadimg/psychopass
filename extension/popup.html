@@ -1,6 +1,15 @@
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+    </head>
+    <body>
+        <h2>PsychoPass</h2>
 <form id="passForm">
     Domain:
+    <!-- need this container to capture click event -->
+    <div id="domain-container">
     <input type="text" id="domain" disabled/>
+    </div>
     Email:
     <input type="text" id="email"/>
     Master password:
@@ -10,3 +19,5 @@
 <script src="jquery-1.9.1.js"></script>
 <script src="engine.js"></script>
 <script src="popup.js"></script>
+</body>
+</html>
