@@ -1,7 +1,7 @@
 var $lastFocused;
 
 // set up tracking of last focused password box
-$(document).on('click', 'input[type=password]', function(e) {
+$(document).on('focus', 'input[type=password]', function(e) {
     var $passBox = $(e.target);
     console.log(e.target);
     $lastFocused = $passBox;
