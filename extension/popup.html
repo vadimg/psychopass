@@ -1,23 +1,24 @@
 <html>
     <head>
-    <link rel="stylesheet" type="text/css" href="popup.css">
+        <link rel="stylesheet" type="text/css" href="popup.css">
     </head>
     <body>
+        <div class="top">
+        <form id="passForm">
         <h2>PsychoPass</h2>
-<form id="passForm">
-    Domain:
-    <!-- need this container to capture click event -->
-    <div id="domain-container">
-    <input type="text" id="domain" disabled/>
-    </div>
-    Email:
-    <input type="text" id="email"/>
-    Master password:
-    <input type="password" id="password"/>
-    <input type="submit">
-</form>
-<script src="jquery-1.9.1.js"></script>
-<script src="engine.js"></script>
-<script src="popup.js"></script>
-</body>
+        <div class="below-header">
+            For <a href="#" id="email">dimva13@gmail.com</a>
+        </div>
+        </div>
+        <div id="pass-box">
+            <input type="password" id="password" placeholder="Master Password"/>
+        </div>
+        <div id="domain-box">
+            Generate a password for <a href="#" id="domain">github.com</a>
+        </div>
+        <script src="jquery-1.9.1.js"></script>
+        <script src="engine.js"></script>
+        <script src="popup.js"></script>
+        </form>
+    </body>
 </html>
