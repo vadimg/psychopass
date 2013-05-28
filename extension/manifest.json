@@ -6,7 +6,8 @@
     {
       "matches": ["*://*/*"],
       "all_frames": true,
-      "js": ["jquery-1.9.1.js", "myscript.js"]
+      "js": ["jquery-1.9.1.js", "content.js"],
+      "css": ["content.css"]
     }
   ],
 

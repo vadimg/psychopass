@@ -1,24 +1,27 @@
 <html>
     <head>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="popup.css">
     </head>
     <body>
-        <div class="top">
         <form id="passForm">
-        <h2>PsychoPass</h2>
-        <div class="below-header">
-            For <a href="#" id="email">dimva13@gmail.com</a>
-        </div>
-        </div>
-        <div id="pass-box">
-            <input type="password" id="password" placeholder="Master Password"/>
-        </div>
-        <div id="domain-box">
-            Generate a password for <a href="#" id="domain">github.com</a>
-        </div>
-        <script src="jquery-1.9.1.js"></script>
-        <script src="engine.js"></script>
-        <script src="popup.js"></script>
+            <div class="top">
+                <div class="left">
+                    <h2>PsychoPass</h2>
+                </div>
+                <div class="right">
+                    <div id="email"></div>
+                </div>
+            </div>
+            <div id="pass-box">
+                <input type="password" id="password" placeholder="&nbsp;Master Password"/>
+            </div>
+            <div id="domain-box">
+                Enter your master password to generate a password for <a href="#" id="domain"></a>
+            </div>
+            <script src="jquery-1.9.1.js"></script>
+            <script src="engine.js"></script>
+            <script src="popup.js"></script>
         </form>
     </body>
 </html>

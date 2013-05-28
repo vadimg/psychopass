@@ -1,16 +1,16 @@
+html {
+    height: 140px;
+}
+
 body {
-    height: 200px;
-    width: 200px;
-    font-family: verdana,helvetica,arial,sans-serif;
+    height: 140px;
+    width: 300px;
+    font-family: "Open Sans",sans-serif;
     font-size: .8em;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed));
 }
 
 .below-header {
     margin-top: -1em;
-}
-
-h1 {
 }
 
 #password {
@@ -20,15 +20,48 @@ h1 {
 
 #password {
     border: 3px solid #333333;
+    outline: none;
+}
+
+.top {
+    height: 50px;
+}
+
+.top h2 {
+    margin: 0px;
+}
+
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+}
+
+#email {
+    margin-top: 6px;
 }
 
 #pass-box {
-    border-top: 1px solid #033e6b;
-    margin-top: 0px;
+    border-top: 2px solid #033e6b;
+    margin-top: -15px;
     margin-left: -10px;
     margin-right: -10px;
     padding: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background: rgb(75,137,180);
+    background: rgb(95,157,200);
+}
+
+#domain-box {
+    margin-top: 5px;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: rgb(75,137,180);
+}
+
+#progress {
+    position: absolute;
+    background-color: rgba(75,137,180,.5);
 }

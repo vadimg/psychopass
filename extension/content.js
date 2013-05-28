@@ -66,9 +66,11 @@ function getDomain($form) {
     var action = $form.attr('action');
 
     // try to get domain from action
-    var actionDomain = extractActionDomain(action);
-    if(actionDomain) {
-        //return actionDomain;
+    if(action) {
+        var actionDomain = extractActionDomain(action);
+        if(actionDomain) {
+            return actionDomain;
+        }
     }
 
     // try to get domain from location
@@ -81,6 +83,8 @@ function getFormInfo(request, cb) {
         return;
     }
 
+    $passBox.addClass('psychopass-highlighted');
+
     var $form = $passBox.parents('form');
     var domain = getDomain($form);
     console.log('domain', domain);
@@ -89,22 +93,26 @@ function getFormInfo(request, cb) {
     cb({domain: domain});
 }
 
+function setPassword(request, cb) {
+    $('.psychopass-highlighted').removeClass('psychopass-highlighted');
+
+    var $passField = getPassField();
+    if(!$passField) {
+        return;
+    }
+
+    console.log('password!', request.password);
+
+    $passField.val(request.password);
+    $passField.focus();
+    cb();
+}
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     console.log('message', request.mtype, sender.tab ? "from a content script:" + sender.tab.url : "from the extension");
     var FUNC_MAP = {
         getFormInfo: getFormInfo,
-        insertPasswords: function(request, cb) {
-            var $passField = getPassField();
-            if(!$passField) {
-                return;
-            }
-
-            console.log('password!', request.password);
-
-            $passField.val(request.password);
-            $passField.focus();
-            cb();
-        },
+        insertPasswords: setPassword,
     };
 
     var f = FUNC_MAP[request.mtype];
