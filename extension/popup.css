@@ -63,5 +63,5 @@ a, a:visited, a:active {
 
 #progress {
     position: absolute;
-    background-color: rgba(75,137,180,.5);
+    background-color: rgba(75,137,180,0.3);
 }

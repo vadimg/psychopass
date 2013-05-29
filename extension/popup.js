@@ -25,6 +25,8 @@ function generatePassword(cb) {
         hooks: {
             on_compute_step: function(keymode, step, ts) {
                 console.log(keymode, step, ts);
+                var $progress = $('#progress');
+                $progress.width($('#password').width() * step/ts);
             },
             on_timeout: function() {},
             on_compute_done: function(keymode, key) {
@@ -33,14 +35,13 @@ function generatePassword(cb) {
         },
     };
 
-    /*
-    $('#password').insertAfter('<div id="progress"></div>');
+    $('#password').after('<div id="progress"></div>');
     var $progress = $('#progress');
-    $progress.top($('#password').top());
-    $progress.left($('#password').left());
-    $progress.width($('#password').width());
+    var pos = $('#password').position();
+    $progress.css('top', pos.top + 6);
+    $progress.css('left', pos.left + 5);
+    $progress.width($('#password').width() * 0);
     $progress.height($('#password').height());
-    */
 
     var engine = new Engine(opts);
     engine.run();
