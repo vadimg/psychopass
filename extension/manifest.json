@@ -1,5 +1,5 @@
 {
-  "name": "Simple OSP",
+  "name": "PsychoPass",
   "description": "Password manager using the magic of cryptographic hashing!",
   "version": "0.1",
   "content_scripts": [
