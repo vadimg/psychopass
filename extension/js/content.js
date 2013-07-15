@@ -115,7 +115,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     console.log('message', request.mtype, sender.tab ? "from a content script:" + sender.tab.url : "from the extension");
     var FUNC_MAP = {
         getFormInfo: getFormInfo,
-        insertPasswords: setPassword,
+        setPassword: setPassword,
     };
 
     var f = FUNC_MAP[request.mtype];

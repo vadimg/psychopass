@@ -59,7 +59,7 @@ function MainCtrl($scope, $http, $location) {
   $scope.submit = function() {
     generatePassword($scope, function(password) {
       chrome.tabs.sendMessage($scope.tabid,
-        {mtype: 'insertPasswords', password: password},
+        {mtype: 'setPassword', password: password},
         function() {
           window.close();
         });
