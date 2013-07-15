@@ -1,0 +1,67 @@
+html {
+    height: 140px;
+}
+
+body {
+    height: 140px;
+    width: 300px;
+    font-family: "Open Sans",sans-serif;
+    font-size: .8em;
+}
+
+.below-header {
+    margin-top: -1em;
+}
+
+#password {
+    font-size: 1.3em;
+    width: 100%;
+}
+
+#password {
+    border: 3px solid #333333;
+    outline: none;
+}
+
+.top {
+    height: 50px;
+}
+
+.top h2 {
+    margin: 0px;
+}
+
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+}
+
+#email {
+    margin-top: 6px;
+}
+
+#pass-box {
+    border-top: 2px solid #033e6b;
+    margin-top: -15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 10px;
+    background: rgb(95,157,200);
+}
+
+#domain-box {
+    margin-top: 5px;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: rgb(75,137,180);
+}
+
+#progress {
+    position: absolute;
+    background-color: rgba(75,137,180,0.3);
+}
