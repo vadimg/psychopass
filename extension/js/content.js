@@ -42,6 +42,7 @@ function extractDomain(host) {
 
     host = host.split(':')[0]; // strip out port
 
+    // for certain domains, include first level subdomain in the domain name
     // Begin Chris Zarate's code
     host=host.split('.');
 
@@ -59,6 +60,7 @@ function extractDomain(host) {
       s=host.join('.');
     }
     // End Chris Zarate's code
+
     return s;
 }
 
