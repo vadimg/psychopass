@@ -80,6 +80,7 @@ function getDomain($form) {
 function getFormInfo(request, cb) {
     var $passBox = getPassField();
     if(!$passBox) {
+        cb();
         return;
     }
 

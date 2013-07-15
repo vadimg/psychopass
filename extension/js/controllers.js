@@ -25,33 +25,33 @@ function generatePassword($scope, cb) {
 function MainCtrl($scope, $http, $location) {
   // get domain and tab id
   chrome.tabs.getSelected(null, function(tab) {
+    $scope.tabid = tab.id;
+
     chrome.tabs.sendMessage(tab.id, {mtype: 'getFormInfo'},
       function(response) {
         console.log('got response', response);
-        if(!response) {
+        if(!response || !response.domain) {
+          $location.path('/notfound');
+          $scope.$apply();
           return;
         }
-
-        $scope.tabid = tab.id;
 
         var domain = response.domain;
         console.log('setting domain', domain);
         $scope.domain = domain;
-        $scope.$digest();
+        $scope.$apply();
       });
   });
 
   // get email
   chrome.storage.sync.get('email', function(item) {
     if(!item.email) {
-      console.log('setting location');
       $location.path('/register');
-      $scope.$digest();
-      console.log('set location');
+      $scope.$apply();
       return;
     }
     $scope.email = item.email;
-    $scope.$digest();
+    $scope.$apply();
   });
 
   // TODO: maybe a race condition if this is called before
