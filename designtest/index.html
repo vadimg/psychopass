@@ -1,0 +1,113 @@
+<style>
+  #parent {
+    position: relative;
+  }
+  #parent img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #container {
+    position: absolute;
+    background-color: #ffffff;
+    top: 72px;
+    left: 794px;
+    width: 316px;
+    height: 148px;
+    overflow: hidden;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  /* real styles start */
+
+html {
+    height: 140px;
+}
+
+body {
+    height: 140px;
+    width: 300px;
+    font-family: "Open Sans",sans-serif;
+    font-size: .8em;
+}
+
+.below-header {
+    margin-top: -1em;
+}
+
+#password {
+    font-size: 1.3em;
+    width: 100%;
+}
+
+#password {
+    border: 3px solid #333333;
+    outline: none;
+}
+
+.top {
+    height: 50px;
+}
+
+.top h2 {
+    margin: 0px;
+}
+
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+}
+
+#email {
+    margin-top: 6px;
+}
+
+#pass-box {
+    border-top: 1px solid #033e6b;
+    margin-top: -15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 10px;
+    background: rgb(95,157,200);
+}
+
+#domain-box {
+    margin-top: 5px;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: rgb(75,137,180);
+}
+
+#progress {
+    position: absolute;
+    background-color: rgba(75,137,180,0.3);
+}
+</style>
+<div id="parent">
+  <img src="ppmtgox.png"/>
+  <div id="container">
+    <div ng-view=""><form id="passForm" ng-submit="submit()" class="ng-scope ng-pristine ng-valid">
+        <div class="top">
+          <div class="left">
+            <h2>PsychoPass</h2>
+          </div>
+          <div class="right">
+            <div id="email" class="ng-binding">dimva13@gmail.com</div>
+          </div>
+        </div>
+        <div id="pass-box">
+          <input type="password" id="password" ng-model="master_password" placeholder="&nbsp;Master Password" class="ng-pristine ng-valid">
+        </div>
+        <div id="domain-box">
+          Enter your master password to generate a password for <a href="#" id="domain" editable="hihi" class="ng-binding"></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
