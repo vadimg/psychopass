@@ -1,4 +1,4 @@
-<style>
+<style type="text/less">
   #parent {
     position: relative;
   }
@@ -21,82 +21,81 @@
 
   /* real styles start */
 
-html {
+  html {
     height: 140px;
-}
+  }
 
-body {
+  body {
     height: 140px;
     width: 300px;
     font-family: "Open Sans",sans-serif;
     font-size: .8em;
-}
+  }
 
-.below-header {
+  .below-header {
     margin-top: -1em;
-}
+  }
 
-#password {
+  #password {
     font-size: 1.3em;
     width: 100%;
-}
 
-#password {
-    border: 3px solid #333333;
+    border: 1px solid #ccc;
     outline: none;
-}
+  }
 
-.top {
-    height: 50px;
-}
+  .top {
+    height: 40px;
+  }
 
-.top h2 {
+  .top h2 {
     margin: 0px;
-}
+  }
 
-.left {
-    float:left;
-}
-
-.right {
+  .right {
+    margin: 0;
     float:right;
-}
+  }
 
-#email {
-    margin-top: 6px;
-}
+  #email {
+  }
 
-#pass-box {
-    border-top: 1px solid #033e6b;
+  @margin: 20px;
+  #pass-box {
     margin-top: -15px;
-    margin-left: -10px;
-    margin-right: -10px;
-    padding: 10px;
-    background: rgb(95,157,200);
-}
+    margin-left: -@margin;
+    margin-right: -@margin;
+    padding: 15px;
+    padding-left: @margin;
+    padding-right: @margin;
+    background: #eee;
+    box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2);
+  }
 
-#domain-box {
+  #domain-box {
     margin-top: 5px;
-}
+    color: #aaa;
+    //-webkit-filter: opacity(.3);
+  }
 
-a, a:visited, a:active {
+  a, a:visited, a:active {
     text-decoration: none;
     color: rgb(75,137,180);
-}
+  }
 
-#progress {
+  #progress {
     position: absolute;
     background-color: rgba(75,137,180,0.3);
-}
+  }
 </style>
+<script src="less-1.5.0.min.js" type="text/javascript"></script>
 <div id="parent">
   <img src="ppmtgox.png"/>
   <div id="container">
-    <div ng-view=""><form id="passForm" ng-submit="submit()" class="ng-scope ng-pristine ng-valid">
+    <div ng-view="">
+      <form id="passForm" ng-submit="submit()" class="ng-scope ng-pristine ng-valid">
         <div class="top">
-          <div class="left">
-            <h2>PsychoPass</h2>
-          </div>
+          <strong>PsychoPass</strong>
           <div class="right">
             <div id="email" class="ng-binding">dimva13@gmail.com</div>
           </div>
@@ -105,7 +104,7 @@ a, a:visited, a:active {
           <input type="password" id="password" ng-model="master_password" placeholder="&nbsp;Master Password" class="ng-pristine ng-valid">
         </div>
         <div id="domain-box">
-          Enter your master password to generate a password for <a href="#" id="domain" editable="hihi" class="ng-binding"></a>
+          Enter your master password to generate a password for <a href="#" id="domain" editable="hihi" class="ng-binding">mtgox.com</a>
         </div>
       </form>
     </div>
